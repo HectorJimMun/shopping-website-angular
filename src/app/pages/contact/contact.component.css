@@ -1,0 +1,28 @@
+.container {
+    padding-bottom: 350px;
+    margin-top: 30px;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.card {
+    padding: 20px;
+    border-width: 2px;
+}
+
+.card-title {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.message-success {
+    color: green;
+    font-weight: 650;
+}
+
+.message-warning {
+    color: rgb(255, 102, 0);
+    font-weight: 650;
+}

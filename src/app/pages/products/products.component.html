@@ -1,0 +1,29 @@
+<div class="container">
+    <h1>Products page</h1>
+    <br/>
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Product</th>
+            <th scope="col">Price</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+            @for (product of productList; track $index) {
+                <tr>
+                    <th scope="row">{{product.id}}</th>
+                    <td>{{product.title}}</td>
+                    <td>{{product.price | currency}}</td>
+                    <td>
+                        <button type="button"
+                            class="btn btn-outline-primary" 
+                            (click)="showDetails(product.id)">View Details</button>
+                    </td>
+                </tr>
+            }
+        
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="card">
+    <div class="card-title">
+      <h2>Contact Us Form</h2>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="contactForm" novalidate (submit)="sendContactData($event)">
+        <div class="mb-3">
+          <label for="name1" class="form-label">Name</label>
+          <input type="text" 
+            class="form-control" 
+            id="name" 
+            formControlName="name" 
+            placeholder="John Smith"
+            [ngClass]="{'is-invalid': hasErrors('name', 'required') || hasErrors('name', 'minlength')}">
+          @if (hasErrors('name', 'required')) {
+            <span class="text-danger">This field is required.</span>
+          }
+          @if (hasErrors('name', 'minlength')) {
+            <span class="text-danger">The name needs at least 5 characters.</span>
+          }  
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" 
+            class="form-control" 
+            id="email" 
+            aria-describedby="emailHelp" 
+            formControlName="email" 
+            placeholder="johnSmith_6@test.com"
+            [ngClass]="{'is-invalid': hasErrors('email', 'required') || hasErrors('email', 'email')}">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          @if (hasErrors('email', 'required')) {
+            <span class="text-danger">This field is required.</span>
+          }
+          @if (hasErrors('email', 'email')) {
+            <span class="text-danger">Invalid email address format.</span>
+          }          
+        </div>
+        <div class="mb-3">
+          <label for="message1" class="form-label">Message</label>
+          <textarea class="form-control" 
+            id="message" rows="5" 
+            formControlName="message" 
+            [ngClass]="{'is-invalid': hasErrors('message', 'required') || hasErrors('message', 'minlength')}" 
+            placeholder="Please, write here your message."></textarea>
+          @if (hasErrors('message', 'required')) {
+            <span class="text-danger">This field is required.</span>
+          }
+          @if (hasErrors('message', 'minlength')) {
+            <span class="text-danger">The message needs at least 10 characters.</span>
+          }
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        @if (contactFormSent) {
+          <br/>
+          <br/>
+          <span class="message-success">Message sent successfully. We will try to answer as soon as possible!</span>
+        }
+        @if (contactFormInvalid) {
+          <br/>
+          <br/>
+          <span class="message-warning">Message not sent. Check the fields and retry again please.</span>
+        }
+      </form>
+    </div>
+  </div>
+</div>
