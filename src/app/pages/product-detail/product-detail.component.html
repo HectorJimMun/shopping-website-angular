@@ -14,6 +14,9 @@
                 <li class="list-group-item"><b>Price: </b>{{product?.price | currency}}</li>
                 <li class="list-group-item"><b>Category: </b>{{product?.category}}</li>
                 <button type="button" class="btn btn-primary" [routerLink]="['/products']">Go to Products</button>
+                <br />
+                <br />
+                <button type="button" class="btn btn-success" (click)="addProductToCart()">Add to the Cart</button>
                 </ul>
             </div>
         </div>

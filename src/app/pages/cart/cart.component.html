@@ -1,0 +1,46 @@
+<div class="container">
+    <h1>My Cart</h1>
+    <br/>
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Product</th>
+            <th scope="col">Unit Price</th>
+            <th scope="col">Number</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+            @for (product of productCart; track $index) {
+                <tr>
+                    <th scope="row">{{product.id}}</th>
+                    <td>{{product.title}}</td>
+                    <td>{{product.price | currency}}</td>
+                    <td>{{product.units}}</td>
+                    <td class="td-actions">
+                        <button type="button" class="btn btn-outline-danger" (click)="removeItem(product.id)">Remove From Cart</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="card">
+        <b>Total Amount:</b> {{totalAmount | currency}}
+    </div>
+    <div class="card">
+        <button type="button" class="btn btn-outline-success" (click)="proceedToCheckout()">Proceed to Checkout</button>
+        <br />
+        <br />
+        <button type="button" class="btn btn-outline-danger" (click)="emptyCart()">Empty Cart</button>
+    </div>
+    @if (checkedOut) {
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Successful payment</h4>
+            <p>(This is a simulation, no payment has been made.)</p>
+            <p>You have successfully paid for the products in your shopping cart.</p>
+            <hr>
+            <p class="mb-0">Thank you so much for testing this logic!</p>
+        </div>
+    }
+</div>

@@ -1,3 +1,10 @@
+.card {
+    margin-bottom: 30px;
+    padding: 10px;
+    border-color: bisque;
+    align-items: center;
+}
+
 .table {
     border-collapse: separate !important;
     border-width: 20px;
@@ -17,13 +24,17 @@ td {
     vertical-align: center;
 }
 
+.td-actions {
+    height: 20px;
+    text-align: center;
+}
+
 th {
     background-color: rgb(135, 135, 135);
     vertical-align: center;
     text-align: center;
 }
 
-.td-actions {
-    height: 20px;
-    text-align: center;
+.btn {
+    margin: 5px;
 }

@@ -16,14 +16,18 @@
                     <th scope="row">{{product.id}}</th>
                     <td>{{product.title}}</td>
                     <td>{{product.price | currency}}</td>
-                    <td>
+                    <td class="td-actions">
                         <button type="button"
                             class="btn btn-outline-primary" 
                             (click)="showDetails(product.id)">View Details</button>
+                            <br/>
+                            <br/>
+                            <button type="button"
+                            class="btn btn-outline-success" 
+                            (click)="addProductToCart(product)">Add To Cart</button>
                     </td>
                 </tr>
             }
-        
         </tbody>
     </table>
 </div>
