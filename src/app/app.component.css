@@ -2,3 +2,8 @@
     background-color: rgb(83, 202, 202);
     color: black;
 }
+
+.nav-link-cart {
+    color: white;
+    font-weight: bold;
+}
