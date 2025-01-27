@@ -95,6 +95,8 @@ export class CartServiceService implements OnInit {
 
     // Update the local storage item
     localStorage.setItem(this._localStorageKey, JSON.stringify(cartProducts));
+
+    this.updateTotalAmount();
   }
 
   /**

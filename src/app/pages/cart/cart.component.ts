@@ -37,17 +37,13 @@ export class CartComponent implements OnInit, AfterViewChecked {
     return this._cartService.getTotalAmount();
   }
 
-  /**
-   * Empties the cart.
-   */
+  // Empties the cart.
   emptyCart() {
     this._cartService.emptyCart();
     this.ngOnInit();
   }
 
-  /**
-   * Simulates the checkout of the cart.
-   */
+  // Simulates the checkout of the cart.
   proceedToCheckout() {
     this._cartService.emptyCart();
     this.ngOnInit();
@@ -56,7 +52,7 @@ export class CartComponent implements OnInit, AfterViewChecked {
 
   /**
    * Removes the product from the cart.
-   * @param {number} index ID of the product to remove.
+   * @param {number} id ID of the product to remove.
    */
   removeItem(id: number) {
     this._cartService.removeProductFromCart(id);
